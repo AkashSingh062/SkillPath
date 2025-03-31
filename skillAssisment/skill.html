@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Assessment Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Skill Assessment Tool</h1>
+            <p class="subtitle">Rate your skills and get personalized improvement suggestions</p>
+        </header>
+        
+        <div class="progress-container">
+            <div class="progress-text">
+                <span>Your Assessment Progress</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="progress-bar"></div>
+            </div>
+        </div>
+        
+        <div class="assessment-container">
+            <div class="skills-section">
+                <h2 class="section-title">Rate Your Skills</h2>
+                <div id="skills-list">
+                    <!-- Skills will be dynamically generated here -->
+                </div>
+                <button id="analyze-btn">Analyze My Skills</button>
+            </div>
+            
+            <div class="results-section">
+                <h2 class="section-title">Your Results</h2>
+                <div class="results-chart" id="radar-chart">
+                    <!-- Radar chart will be rendered here -->
+                </div>
+                <div class="summary-container" id="summary-container">
+                    <!-- Results summary will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
