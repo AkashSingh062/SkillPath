@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPath - Smart Career Development Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="placeholder/40/40" alt="SkillPath Logo">
+            <h1>SkillPath</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#skill-assessment">Skill Assessment</a>
+            <a href="#learning-paths">Learning Paths</a>
+            <a href="#industry-trends">Industry Trends</a>
+            <a href="#progress-tracking">Progress Tracking</a>
+            <a href="#career-guidance">Career Guidance</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn btn-outline" onclick="openModal('login')">Login</button>
+            <button class="btn btn-primary" onclick="openModal('signup')">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Discover Your <span>Perfect</span> Career Path</h1>
+            <p>SkillPath helps you identify the right skills, build personalized learning paths, and navigate your career journey with confidence.</p>
+            <button class="btn btn-primary" onclick="openModal('signup')">Get Started</button>
+        </div>
+        <div class="hero-image">
+            <img src="placeholder/500/350" alt="Career Guidance Illustration">
+        </div>
+    </section>
+
+    <!-- Skill Assessment Section -->
+    <section id="skill-assessment">
+        <div class="section-header">
+            <h2>Skill Assessment</h2>
+            <p>Discover your strengths and areas for improvement with our comprehensive skill assessment tools.</p>
+        </div>
+        <div class="assessment-container">
+            <div class="assessment-card">
+                <h3>Current Skills Analysis</h3>
+                <p>Based on your assessments, here's where you stand in key skill areas:</p>
+                <div class="skill-chart">
+                    <canvas id="skillRadarChart"></canvas>
+                </div>
+                <button class="btn btn-primary">Take New Assessment</button>
+            </div>
+            <div class="assessment-card">
+                <h3>Improvement Areas</h3>
+                <p>We've identified these areas where you can focus to reach your career goals:</p>
+                <div class="skill-chart">
+                    <canvas id="improvementChart"></canvas>
+                </div>
+                <button class="btn btn-outline">View Detailed Report</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths Section -->
+    <section id="learning-paths">
+        <div class="section-header">
+            <h2>Personalized Learning Paths</h2>
+            <p>Based on your skill assessment, we've curated the perfect courses to help you reach your career goals.</p>
+        </div>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="placeholder/300/180" alt="Web Development Course">
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Recommended</span>
+                    <h3>Full Stack Web Development</h3>
+                    <p>Master modern web development with HTML, CSS, JavaScript, React, and Node.js.</p>
+                    <div class="course-meta">
+                        <span>48 hours</span>
+                        <span>Beginner to Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="placeholder/300/180" alt="Data Analysis Course">
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">High Priority</span>
+                    <h3>Data Analysis with Python</h3>
+                    <p>Learn to analyze and visualize data using Python, pandas, and matplotlib.</p>
+                    <div class="course-meta">
+                        <span>36 hours</span>
+                        <span>Intermediate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="placeholder/300/180" alt="Project Management Course">
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Complementary</span>
+                    <h3>Agile Project Management</h3>
+                    <p>Develop essential project management skills using Agile methodologies.</p>
+                    <div class="course-meta">
+                        <span>24 hours</span>
+                        <span>All Levels</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Trends Section -->
+    <section id="industry-trends">
+        <div class="section-header">
+            <h2>Industry Trends & Insights</h2>
+            <p>Stay ahead of the curve with the latest job market trends and insights on in-demand skills.</p>
+        </div>
+        <div class="trends-container">
+            <div class="trend-card">
+                <div class="trend-info">
+                    <h3>Full-Stack Developer</h3>
+                    <p>Full-stack developers continue to be in high demand across industries, especially in fintech and e-commerce sectors.</p>
+                    <div class="salary-info">
+                        <span class="salary-icon">💰</span>
+                        <div>
+                            <p>Average Salary</p>
+                            <h4>₹8,00,000 - ₹15,00,000</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="trend-data">
+                    <h4>Key Skills Required:</h4>
+                    <div>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                    <div class="skill-chart">
+                        <canvas id="fullstackTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="trend-card">
+                <div class="trend-info">
+                    <h3>Data Scientist</h3>
+                    <p>Data science roles are experiencing rapid growth as businesses increasingly rely on data-driven decision making.</p>
+                    <div class="salary-info">
+                        <span class="salary-icon">💰</span>
+                        <div>
+                            <p>Average Salary</p>
+                            <h4>₹7,00,000 - ₹18,00,000</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="trend-data">
+                    <h4>Key Skills Required:</h4>
+                    <div>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Statistics</span>
+                    </div>
+                    <div class="skill-chart">
+                        <canvas id="dataScienceTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section id="progress-tracking">
+        <div class="section-header">
+            <h2>Progress Tracking</h2>
+            <p>Track your learning journey, monitor your progress, and celebrate your achievements.</p>
+        </div>
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <img src="placeholder/100/100" alt="User Profile">
+                    </div>
+                    <div class="profile-name">
+                        <h3>Aarav Kumar</h3>
+                        <p>Web Developer</p>
+                        <div class="streak-counter">
+                            <span>🔥</span>
+                            <span>14 Day Streak</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Courses</h4>
+                        <p>7</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Completed</h4>
+                        <p>4</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Progress</h4>
+                        <p>65%</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Hours</h4>
+                        <p>87</p>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <h3>Skills Progress</h3>
+                <div class="progress-chart">
+                    <canvas id="skillProgressChart"></canvas>
+                </div>
+                <button class="btn btn-outline">View Full Report</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Guidance Section -->
+    <section id="career-guidance">
+        <div class="section-header">
+            <h2>Smart Career Guidance</h2>
+            <p>Visualize your career path with our interactive roadmaps and personalized guidance.</p>
+        </div>
+        <div class="roadmap-container">
+            <div class="roadmap">
+                <canvas id="careerRoadmapChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <h2>SkillPath</h2>
+        </div>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Career Resources</a>
+            <a href="#">Partner With Us</a>
+            <a href="#">Blog</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">in</a>
+            <a href="#" class="social-icon">t</a>
+            <a href="#" class="social-icon">ig</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 SkillPath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Sign Up</h2>
+            </div>
+            <div class="tabs">
+                <div class="tab active" id="signupTab" onclick="switchTab('signup')">Sign Up</div>
+                <div class="tab" id="loginTab" onclick="switchTab('login')">Login</div>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label>Profile Picture</label>
+                    <label for="profilePic" class="file-label">
+                        <span>Choose a file</span>
+                        <span>or drag and drop</span>
+                    </label>
+                    <input type="file" id="profilePic" name="profilePic" class="file-input">
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" onclick="switchTab('login')">Log in</a></p>
+                </div>
+            </form>
+            <form id="loginForm" style="display: none;">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Log In</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" onclick="switchTab('signup')">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
