@@ -1,21 +1,3 @@
-// Theme Toggle
-const themeSwitch = document.getElementById('theme-switch');
-themeSwitch.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode');
-    // Save preference to localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-});
-
-// Check for saved theme preference
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeSwitch.checked = true;
-}
-
 // Mock data for job market trends
 const jobTrendsData = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
