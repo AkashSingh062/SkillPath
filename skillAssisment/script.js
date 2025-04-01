@@ -3,7 +3,7 @@ const skillsData = [
         id: 'communication',
         name: 'Communication',
         resources: [
-            { name: 'Effective Communication Course', link: 'https://youtu.be/HAnw168huqA?si=-wnBIDwNVTDjPf5q' },
+            { name: 'Think Fast, Talk Fast: Communication Techniques', link: 'https://youtu.be/HAnw168huqA?si=-wnBIDwNVTDjPf5q' },
             { name: 'Public Speaking Masterclass', link: 'https://youtu.be/xSp78RwcAS4?si=SU4Y0RIS53ijrlaw' },
             { name: 'Active Listening Techniques', link: 'https://youtu.be/Yq5pJ0q3xuc?si=kCfibOOzEsVSEiSV' }
         ]
@@ -12,27 +12,27 @@ const skillsData = [
         id: 'problem-solving',
         name: 'Problem Solving',
         resources: [
-            { name: 'Critical Thinking Workshop', link: 'https://youtu.be/x0vUsxhMczI?si=qMnYaxBy5chTO9of' },
-            { name: 'Design Thinking Methodology', link: 'https://youtu.be/_r0VX-aU_T8?si=uKrYVab15dyhV2yI' },
-            { name: 'Decision Making Frameworks', link: 'https://youtu.be/X7j8F16eSqs?si=YWY14VSYaY31lLaE' }
+            { name: 'Critical Thinking Workshop by Jordan Peterson', link: 'https://youtu.be/x0vUsxhMczI?si=qMnYaxBy5chTO9of' },
+            { name: 'Design Thinking Process', link: 'https://youtu.be/_r0VX-aU_T8?si=uKrYVab15dyhV2yI' },
+            { name: 'How to make Smart Decisions | TedEd', link: 'https://youtu.be/X7j8F16eSqs?si=YWY14VSYaY31lLaE' }
         ]
     },
     {
         id: 'coding',
         name: 'Coding',
         resources: [
-            { name: 'Web Development Bootcamp', link: 'https://youtu.be/zJSY8tbf_ys?si=TVHd9i-6yb_pVv2g' },
-            { name: 'Data Structures & Algorithms', link: 'https://youtu.be/8hly31xKli0?si=HYyrImbcu1Z2jhQv' },
-            { name: 'Clean Code Practices', link: 'https://www.youtube.com/playlist?list=PLWKjhJtqVAbkK24EaPurzMq0-kw5U9pJh' }
+            { name: 'Web Development Bootcamp | FreeCodeCamp', link: 'https://youtu.be/zJSY8tbf_ys?si=TVHd9i-6yb_pVv2g' },
+            { name: 'Data Structures & Algorithms | FreeCodeCamp', link: 'https://youtu.be/8hly31xKli0?si=HYyrImbcu1Z2jhQv' },
+            { name: 'Clean Code Practices | Playlist', link: 'https://www.youtube.com/playlist?list=PLWKjhJtqVAbkK24EaPurzMq0-kw5U9pJh' }
         ]
     },
     {
         id: 'leadership',
         name: 'Leadership',
         resources: [
-            { name: 'Leadership Essentials Course', link: 'https://www.youtube.com/playlist?list=PLdinyWzDfipOUQjdoqbfGu2e93r1ZE_wI' },
+            { name: 'Leadership Essentials Playlist', link: 'https://www.youtube.com/playlist?list=PLdinyWzDfipOUQjdoqbfGu2e93r1ZE_wI' },
             { name: 'Team Management Skills', link: 'https://youtu.be/iDbdXTMnOmE?si=Bk_DtPmy6vk2mp5z' },
-            { name: 'Strategic Planning Workshop', link: 'https://youtu.be/iuYlGRnC7J8?si=x2U3qZC9tRVDe9pR' }
+            { name: 'Strategic Planning Workshop by Harvard Buisness School', link: 'https://youtu.be/iuYlGRnC7J8?si=x2U3qZC9tRVDe9pR' }
         ]
     },
     {
@@ -48,9 +48,9 @@ const skillsData = [
         id: 'creativity',
         name: 'Creativity',
         resources: [
-            { name: 'Design Thinking Workshop', link: 'https://youtu.be/A5agx1J9dJQ?si=DoSveFFJjbiQS06Y' },
-            { name: 'Creative Problem Solving', link: 'https://youtu.be/cHRZ6OrSvvI?si=CL9vOGXVIV9nj_jW' },
-            { name: 'Innovation Techniques', link: 'https://youtu.be/Mtjatz9r-Vc?si=sJ7Q-ebeQC5TnvrZ' }
+            { name: 'How To Run A Design Thinking Workshop by CareerFoundary', link: 'https://youtu.be/A5agx1J9dJQ?si=DoSveFFJjbiQS06Y' },
+            { name: 'Navi Radjou: Creative problem-solving in the face of extreme limits', link: 'https://youtu.be/cHRZ6OrSvvI?si=CL9vOGXVIV9nj_jW' },
+            { name: 'The art of Innovation | TedEdX', link: 'https://youtu.be/Mtjatz9r-Vc?si=sJ7Q-ebeQC5TnvrZ' }
         ]
     },
     {
