@@ -1,6 +1,5 @@
-
 let userData = {
-    name: "Alex Johnson",
+    name: "Aarav Kumar",
     skills: [
         { name: "JavaScript", level: "Advanced", percentage: 75 },
         { name: "HTML/CSS", level: "Expert", percentage: 90 },
@@ -493,21 +492,6 @@ function showNotification(message, duration = 3000) {
 // =============== EVENT LISTENERS ===============
 // Initialize on load
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize theme toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    // Load theme preference
-    if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
-        themeToggle.checked = true;
-    }
-    
-    // Theme toggle event
-    themeToggle.addEventListener('change', () => {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
-    
     // Assessment button event
     const assessmentBtn = document.querySelector('.assessment-card .btn');
     assessmentBtn.addEventListener('click', () => {
@@ -544,20 +528,12 @@ document.addEventListener('DOMContentLoaded', function() {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
         
-        .dark-mode .modal-content {
-            background-color: var(--bg-dark);
-        }
-        
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem;
             border-bottom: 1px solid var(--border-light);
-        }
-        
-        .dark-mode .modal-header {
-            border-bottom: 1px solid var(--border-dark);
         }
         
         .close-modal {
@@ -575,19 +551,11 @@ document.addEventListener('DOMContentLoaded', function() {
             border-top: 1px solid var(--border-light);
         }
         
-        .dark-mode .modal-footer {
-            border-top: 1px solid var(--border-dark);
-        }
-        
         /* Assessment Styles */
         .question-progress {
             margin-bottom: 1rem;
             color: var(--primary);
             font-weight: 500;
-        }
-        
-        .dark-mode .question-progress {
-            color: var(--info);
         }
         
         .question-text {
@@ -610,10 +578,6 @@ document.addEventListener('DOMContentLoaded', function() {
             cursor: pointer;
         }
         
-        .dark-mode .option {
-            border: 1px solid var(--border-dark);
-        }
-        
         .option:hover {
             background-color: rgba(67, 97, 238, 0.1);
         }
@@ -632,10 +596,6 @@ document.addEventListener('DOMContentLoaded', function() {
             font-weight: bold;
             color: var(--primary);
             margin: 1rem 0;
-        }
-        
-        .dark-mode .score-display {
-            color: var(--info);
         }
         
         /* Notification */
