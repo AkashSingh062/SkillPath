@@ -1,0 +1,206 @@
+/* Base container styling */
+.progress-chart{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills_progress_wrapper_a2c8f {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 440px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+.skills_progress_header_b3e7d {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.skills_progress_title_f9c6a {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.skills_progress_dropdown_e8f1c {
+    padding: 6px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #555555;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    outline: none;
+}
+
+.skills_progress_dropdown_e8f1c:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Heatmap grid styling */
+.skills_progress_grid_h7i9j {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 3px;
+    margin-bottom: 16px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.skills_progress_grid_h7i9j.fade {
+    opacity: 0;
+}
+
+.skills_progress_day_cell_j5k6l {
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%; /* Makes cells square */
+    border-radius: 2px;
+    background-color: #ebedf0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.skills_progress_day_cell_j5k6l:hover {
+    transform: scale(1.15);
+    z-index: 10;
+}
+
+.skills_progress_day_tooltip_m7n8o {
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 8px;
+    background-color: #333333;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.skills_progress_day_tooltip_m7n8o::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333333 transparent transparent transparent;
+}
+
+.skills_progress_day_cell_j5k6l:hover .skills_progress_day_tooltip_m7n8o {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Level color classes */
+.skills_progress_level_0_k9l0m {
+    background-color: #ebedf0;
+}
+
+.skills_progress_level_1_q3r4s {
+    background-color: #c6e48b;
+}
+
+.skills_progress_level_2_t5u6v {
+    background-color: #7bc96f;
+}
+
+.skills_progress_level_3_w7x8y {
+    background-color: #239a3b;
+}
+
+.skills_progress_level_4_z9a0b {
+    background-color: #196127;
+}
+
+/* Stats section styling */
+.skills_progress_stats_k1l2m {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+}
+
+.skills_progress_stat_item_n3o4p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills_progress_stat_label_q5r6s {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 4px;
+}
+
+.skills_progress_stat_value_w9x0y {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Legend styling */
+.skills_progress_legend_c3d4e {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.skills_progress_legend_item_f5g6h {
+    display: flex;
+    align-items: center;
+}
+
+.skills_progress_legend_color_i7j8k {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+
+.skills_progress_legend_text_n1o2p {
+    font-size: 10px;
+    color: #777777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .skills_progress_wrapper_a2c8f {
+        max-width: 100%;
+        padding: 12px;
+    }
+    
+    .skills_progress_grid_h7i9j {
+        grid-gap: 2px;
+    }
+    
+    .skills_progress_legend_c3d4e {
+        flex-wrap: wrap;
+    }
+    
+    .skills_progress_legend_item_f5g6h {
+        margin-right: 8px;
+        margin-bottom: 4px;
+    }
+}

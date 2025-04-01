@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillPath - Smart Career Development Platform</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./m-2/styles.css">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -223,7 +225,65 @@
             <div class="profile-card">
                 <h3>Skills Progress</h3>
                 <div class="progress-chart">
-                    <canvas id="skillProgressCfhart"></canvas>
+                    
+                    <div id="skills_progress_container_47d9e" class="skills_progress_wrapper_a2c8f">
+                      <div class="skills_progress_header_b3e7d">
+                          <h3 class="skills_progress_title_f9c6a">Skills Progress</h3>
+                          <select id="skills_progress_month_select_c4d5b" class="skills_progress_dropdown_e8f1c">
+                              <option value="0">January</option>
+                              <option value="1">February</option>
+                              <option value="2">March</option>
+                              <option value="3">April</option>
+                              <option value="4">May</option>
+                              <option value="5">June</option>
+                              <option value="6">July</option>
+                              <option value="7">August</option>
+                              <option value="8">September</option>
+                              <option value="9">October</option>
+                              <option value="10">November</option>
+                              <option value="11">December</option>
+                          </select>
+                      </div>
+                      
+                      <div id="skills_progress_heatmap_d6e2f" class="skills_progress_grid_h7i9j"></div>
+                      
+                      <div class="skills_progress_stats_k1l2m">
+                          <div class="skills_progress_stat_item_n3o4p">
+                              <span class="skills_progress_stat_label_q5r6s">Active Days:</span>
+                              <span id="skills_progress_active_days_t7u8v" class="skills_progress_stat_value_w9x0y">14</span>
+                          </div>
+                          <div class="skills_progress_stat_item_n3o4p">
+                              <span class="skills_progress_stat_label_q5r6s">Current Streak:</span>
+                              <span id="skills_progress_streak_z1a2b" class="skills_progress_stat_value_w9x0y">14</span>
+                          </div>
+                      </div>
+                      
+                      <div class="skills_progress_legend_c3d4e">
+                          <div class="skills_progress_legend_item_f5g6h">
+                              <div class="skills_progress_legend_color_i7j8k skills_progress_level_0_k9l0m"></div>
+                              <span class="skills_progress_legend_text_n1o2p">None</span>
+                          </div>
+                          <div class="skills_progress_legend_item_f5g6h">
+                              <div class="skills_progress_legend_color_i7j8k skills_progress_level_1_q3r4s"></div>
+                              <span class="skills_progress_legend_text_n1o2p">Low</span>
+                          </div>
+                          <div class="skills_progress_legend_item_f5g6h">
+                              <div class="skills_progress_legend_color_i7j8k skills_progress_level_2_t5u6v"></div>
+                              <span class="skills_progress_legend_text_n1o2p">Medium</span>
+                          </div>
+                          <div class="skills_progress_legend_item_f5g6h">
+                              <div class="skills_progress_legend_color_i7j8k skills_progress_level_3_w7x8y"></div>
+                              <span class="skills_progress_legend_text_n1o2p">High</span>
+                          </div>
+                          <div class="skills_progress_legend_item_f5g6h">
+                              <div class="skills_progress_legend_color_i7j8k skills_progress_level_4_z9a0b"></div>
+                              <span class="skills_progress_legend_text_n1o2p">Intense</span>
+                          </div>
+                      </div>
+                  </div>
+
+
+                  </div>
                 </div>
                 <button class="btn btn-outline"><a href="./progressTracking/index.html">View Full Report</a></button>
             </div>
@@ -501,5 +561,6 @@
         });
       });
     </script>
+    <script src="./m-2/script.js"></script>
 </body>
 </html>
