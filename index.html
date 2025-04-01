@@ -52,7 +52,7 @@
                 <div class="skill-chart">
                     <canvas id="skillRadarChart"></canvas>
                 </div>
-                <button class="btn btn-primary">Take New Assessment</button>
+                <button class="btn btn-primary"><a class="btn btn-primary" href="./skillAssisment/skill.html">Take New Assessment</a></button>
             </div>
             <div class="assessment-card">
                 <h3>Improvement Areas</h3>
@@ -60,7 +60,7 @@
                 <div class="skill-chart">
                     <canvas id="improvementChart"></canvas>
                 </div>
-                <button class="btn btn-outline">View Detailed Report</button>
+                <button class="btn btn-outline"><a href="./PersonalizedLearning/index.html">View Detailed Report</a></button>
             </div>
         </div>
     </section>
@@ -223,9 +223,9 @@
             <div class="profile-card">
                 <h3>Skills Progress</h3>
                 <div class="progress-chart">
-                    <canvas id="skillProgressChart"></canvas>
+                    <canvas id="skillProgressCfhart"></canvas>
                 </div>
-                <button class="btn btn-outline">View Full Report</button>
+                <button class="btn btn-outline"><a href="./progressTracking/index.html">View Full Report</a></button>
             </div>
         </div>
     </section>
@@ -233,15 +233,17 @@
     <!-- Career Guidance Section -->
     <section id="career-guidance">
         <div class="section-header">
-            <h2>Smart Career Guidance</h2>
-            <p>Visualize your career path with our interactive roadmaps and personalized guidance.</p>
+          <h2>Smart Career Guidance</h2>
+          <p>Visualize your career path with our interactive roadmaps and personalized guidance.</p>
         </div>
         <div class="roadmap-container">
-            <div class="roadmap">
-                <canvas id="careerRoadmapChart"></canvas>
-            </div>
+          <div class="roadmap">
+            <canvas id="careerRoadmapChart"></canvas>
+          </div>
+          <div class="legend" id="chartLegend"></div>
         </div>
-    </section>
+      </section>
+    
 
     <!-- Footer -->
     <footer>
@@ -329,5 +331,142 @@
             </form>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Sample career path data
+      const careerData = {
+        labels: ['Entry Level', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Management'],
+        datasets: [
+          {
+            label: 'Salary Progression',
+            data: [50000, 65000, 85000, 110000, 135000, 160000],
+            borderColor: '#3498db',
+            backgroundColor: 'rgba(52, 152, 219, 0.2)',
+            tension: 0.4,
+            fill: true
+          },
+          {
+            label: 'Skills Development',
+            data: [20, 40, 65, 80, 90, 95],
+            borderColor: '#2ecc71',
+            backgroundColor: 'rgba(46, 204, 113, 0.2)',
+            tension: 0.4,
+            fill: true,
+            yAxisID: 'y1'
+          },
+          {
+            label: 'Job Satisfaction',
+            data: [70, 65, 75, 85, 90, 88],
+            borderColor: '#e74c3c',
+            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+            tension: 0.4,
+            fill: true,
+            yAxisID: 'y1'
+          }
+        ]
+      };
+
+      // Create the chart
+      const ctx = document.getElementById('careerRoadmapChart').getContext('2d');
+      const careerChart = new Chart(ctx, {
+        type: 'line',
+        data: careerData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  let label = context.dataset.label || '';
+                  if (label) {
+                    label += ': ';
+                    if (context.datasetIndex === 0) {
+                      label += '$' + context.raw.toLocaleString();
+                    } else {
+                      label += context.raw + '%';
+                    }
+                  }
+                  return label;
+                }
+              }
+            },
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              position: 'left',
+              title: {
+                display: true,
+                text: 'Salary ($)'
+              },
+              ticks: {
+                callback: function(value) {
+                  return '$' + value.toLocaleString();
+                }
+              }
+            },
+            y1: {
+              beginAtZero: true,
+              position: 'right',
+              title: {
+                display: true,
+                text: 'Percentage (%)'
+              },
+              min: 0,
+              max: 100,
+              grid: {
+                drawOnChartArea: false
+              },
+              ticks: {
+                callback: function(value) {
+                  return value + '%';
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // Create custom legend
+      const legendContainer = document.getElementById('chartLegend');
+      careerData.datasets.forEach((dataset, index) => {
+        const legendItem = document.createElement('div');
+        legendItem.classList.add('legend-item');
+        
+        const colorBox = document.createElement('div');
+        colorBox.classList.add('color-box');
+        colorBox.style.backgroundColor = dataset.borderColor;
+        
+        const text = document.createElement('span');
+        text.textContent = dataset.label;
+        
+        legendItem.appendChild(colorBox);
+        legendItem.appendChild(text);
+        legendContainer.appendChild(legendItem);
+        
+        legendItem.addEventListener('click', () => {
+          const datasetIndex = index;
+          const isDatasetVisible = careerChart.isDatasetVisible(datasetIndex);
+          
+          if (isDatasetVisible) {
+            careerChart.hide(datasetIndex);
+            legendItem.style.opacity = 0.5;
+          } else {
+            careerChart.show(datasetIndex);
+            legendItem.style.opacity = 1;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
