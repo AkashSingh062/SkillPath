@@ -23,6 +23,10 @@ body {
     background-color: var(--bg-light);
     color: var(--text-light);
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 
 header {
     display: flex;
