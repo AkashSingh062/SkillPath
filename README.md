@@ -1,6 +1,6 @@
 # SkillPath
 
-# CODESPRINT – UTTHAAN 2K24
+# CODESPRINT – UTTHAAN 2K25
 
 ## SkillPath - A Smart Web Platform for Youth Skill Development
 

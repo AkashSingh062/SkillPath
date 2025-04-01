@@ -7,35 +7,35 @@ const jobTrendsData = {
             data: [1200, 1300, 1400, 1500, 1700, 1900],
             borderColor: '#4361ee',
             backgroundColor: 'rgba(67, 97, 238, 0.1)',
-            tension: 0.4
+            tension: 1.0
         },
         {
             label: 'Finance',
             data: [950, 1000, 1050, 1100, 1150, 1200],
             borderColor: '#3a0ca3',
             backgroundColor: 'rgba(58, 12, 163, 0.1)',
-            tension: 0.4
+            tension: 1.0
         },
         {
             label: 'Healthcare',
             data: [800, 850, 900, 1000, 1100, 1250],
             borderColor: '#4cc9f0',
             backgroundColor: 'rgba(76, 201, 240, 0.1)',
-            tension: 0.4
+            tension: 1.0
         },
         {
             label: 'Marketing',
             data: [700, 750, 800, 850, 900, 950],
             borderColor: '#f72585',
             backgroundColor: 'rgba(247, 37, 133, 0.1)',
-            tension: 0.4
+            tension: 1.0
         },
         {
             label: 'Education',
             data: [500, 550, 600, 650, 700, 750],
             borderColor: '#7209b7',
             backgroundColor: 'rgba(114, 9, 183, 0.1)',
-            tension: 0.4
+            tension: 1.0
         }
     ]
 };
