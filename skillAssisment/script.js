@@ -3,72 +3,72 @@ const skillsData = [
         id: 'communication',
         name: 'Communication',
         resources: [
-            { name: 'Effective Communication Course', link: '#' },
-            { name: 'Public Speaking Masterclass', link: '#' },
-            { name: 'Active Listening Techniques', link: '#' }
+            { name: 'Effective Communication Course', link: 'https://youtu.be/HAnw168huqA?si=-wnBIDwNVTDjPf5q' },
+            { name: 'Public Speaking Masterclass', link: 'https://youtu.be/xSp78RwcAS4?si=SU4Y0RIS53ijrlaw' },
+            { name: 'Active Listening Techniques', link: 'https://youtu.be/Yq5pJ0q3xuc?si=kCfibOOzEsVSEiSV' }
         ]
     },
     {
         id: 'problem-solving',
         name: 'Problem Solving',
         resources: [
-            { name: 'Critical Thinking Workshop', link: '#' },
-            { name: 'Design Thinking Methodology', link: '#' },
-            { name: 'Decision Making Frameworks', link: '#' }
+            { name: 'Critical Thinking Workshop', link: 'https://youtu.be/x0vUsxhMczI?si=qMnYaxBy5chTO9of' },
+            { name: 'Design Thinking Methodology', link: 'https://youtu.be/_r0VX-aU_T8?si=uKrYVab15dyhV2yI' },
+            { name: 'Decision Making Frameworks', link: 'https://youtu.be/X7j8F16eSqs?si=YWY14VSYaY31lLaE' }
         ]
     },
     {
         id: 'coding',
         name: 'Coding',
         resources: [
-            { name: 'Web Development Bootcamp', link: '#' },
-            { name: 'Data Structures & Algorithms', link: '#' },
-            { name: 'Clean Code Practices', link: '#' }
+            { name: 'Web Development Bootcamp', link: 'https://youtu.be/zJSY8tbf_ys?si=TVHd9i-6yb_pVv2g' },
+            { name: 'Data Structures & Algorithms', link: 'https://youtu.be/8hly31xKli0?si=HYyrImbcu1Z2jhQv' },
+            { name: 'Clean Code Practices', link: 'https://www.youtube.com/playlist?list=PLWKjhJtqVAbkK24EaPurzMq0-kw5U9pJh' }
         ]
     },
     {
         id: 'leadership',
         name: 'Leadership',
         resources: [
-            { name: 'Leadership Essentials Course', link: '#' },
-            { name: 'Team Management Skills', link: '#' },
-            { name: 'Strategic Planning Workshop', link: '#' }
+            { name: 'Leadership Essentials Course', link: 'https://www.youtube.com/playlist?list=PLdinyWzDfipOUQjdoqbfGu2e93r1ZE_wI' },
+            { name: 'Team Management Skills', link: 'https://youtu.be/iDbdXTMnOmE?si=Bk_DtPmy6vk2mp5z' },
+            { name: 'Strategic Planning Workshop', link: 'https://youtu.be/iuYlGRnC7J8?si=x2U3qZC9tRVDe9pR' }
         ]
     },
     {
         id: 'time-management',
         name: 'Time Management',
         resources: [
-            { name: 'Productivity Masterclass', link: '#' },
-            { name: 'Time Blocking Techniques', link: '#' },
-            { name: 'Priority Management', link: '#' }
+            { name: 'Productivity Masterclass', link: 'https://www.youtube.com/playlist?list=PLYp1CkUBbk-cKZhwoW8VMcQlWjgfUA5ME' },
+            { name: 'Time Blocking Techniques', link: 'https://youtu.be/Ip5oWhj9yP0?si=F3frhonMvvBIl6iH' },
+            { name: 'Priority Management', link: 'https://youtu.be/iDbdXTMnOmE?si=x-0aJZdAp0Yj7PCa' }
         ]
     },
     {
         id: 'creativity',
         name: 'Creativity',
         resources: [
-            { name: 'Design Thinking Workshop', link: '#' },
-            { name: 'Creative Problem Solving', link: '#' },
-            { name: 'Innovation Techniques', link: '#' }
+            { name: 'Design Thinking Workshop', link: 'https://youtu.be/A5agx1J9dJQ?si=DoSveFFJjbiQS06Y' },
+            { name: 'Creative Problem Solving', link: 'https://youtu.be/cHRZ6OrSvvI?si=CL9vOGXVIV9nj_jW' },
+            { name: 'Innovation Techniques', link: 'https://youtu.be/Mtjatz9r-Vc?si=sJ7Q-ebeQC5TnvrZ' }
         ]
     },
     {
         id: 'teamwork',
         name: 'Teamwork',
         resources: [
-            { name: 'Collaborative Work Strategies', link: '#' },
-            { name: 'Conflict Resolution', link: '#' },
-            { name: 'Effective Team Communication', link: '#' }
+            { name: 'Collaborative Work Strategies', link: 'https://youtu.be/AMG8ObDmbaM?si=uwBDex9J5qSeH9Fo' },
+            { name: 'Conflict Resolution', link: 'https://youtu.be/zHXYWMnm7Yg?si=wfTyHVRD8v4QM-I2' },
+            { name: 'Effective Team Communication', link: 'https://youtu.be/r3QOULEhypA?si=j3yuaLT8oNudNvMi' }
         ]
     },
     {
         id: 'adaptability',
         name: 'Adaptability',
         resources: [
-            { name: 'Change Management Course', link: '#' },
-            { name: 'Resilience Training', link: '#' },
-            { name: 'Growth Mindset Development', link: '#' }
+            { name: 'Change Management Course', link: 'https://youtu.be/7zRvhFb9UUQ?si=0SO0vE2y8GEKAd1g' },
+            { name: 'Resilience Training', link: 'https://youtu.be/CuCptHYw_-c?si=yxZy9uy38BiWkXFM' },
+            { name: 'Growth Mindset Development', link: 'https://youtu.be/hiiEeMN7vbQ?si=16mAK74DIdeR5L43' }
         ]
     }
 ];
