@@ -332,141 +332,174 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Sample career path data
-      const careerData = {
-        labels: ['Entry Level', 'Junior', 'Mid-Level', 'Senior', 'Lead', 'Management'],
-        datasets: [
-          {
-            label: 'Salary Progression',
-            data: [50000, 65000, 85000, 110000, 135000, 160000],
-            borderColor: '#3498db',
-            backgroundColor: 'rgba(52, 152, 219, 0.2)',
-            tension: 0.4,
-            fill: true
-          },
-          {
-            label: 'Skills Development',
-            data: [20, 40, 65, 80, 90, 95],
-            borderColor: '#2ecc71',
-            backgroundColor: 'rgba(46, 204, 113, 0.2)',
-            tension: 0.4,
-            fill: true,
-            yAxisID: 'y1'
-          },
-          {
-            label: 'Job Satisfaction',
-            data: [70, 65, 75, 85, 90, 88],
-            borderColor: '#e74c3c',
-            backgroundColor: 'rgba(231, 76, 60, 0.2)',
-            tension: 0.4,
-            fill: true,
-            yAxisID: 'y1'
-          }
-        ]
-      };
-
-      // Create the chart
-      const ctx = document.getElementById('careerRoadmapChart').getContext('2d');
-      const careerChart = new Chart(ctx, {
-        type: 'line',
-        data: careerData,
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: {
-            mode: 'index',
-            intersect: false,
-          },
-          plugins: {
-            tooltip: {
-              callbacks: {
-                label: function(context) {
-                  let label = context.dataset.label || '';
-                  if (label) {
-                    label += ': ';
-                    if (context.datasetIndex === 0) {
-                      label += '$' + context.raw.toLocaleString();
-                    } else {
-                      label += context.raw + '%';
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Sample career path data
+        const careerData = {
+          labels: ['Entry', 'Junior', 'Mid', 'Senior', 'Lead', 'Mgmt'],
+          datasets: [
+            {
+              label: 'Salary Progression',
+              data: [50000, 65000, 85000, 110000, 135000, 160000],
+              borderColor: '#3498db',
+              backgroundColor: 'rgba(52, 152, 219, 0.2)',
+              tension: 0.4,
+              fill: true
+            },
+            {
+              label: 'Skills Development',
+              data: [20, 40, 65, 80, 90, 95],
+              borderColor: '#2ecc71',
+              backgroundColor: 'rgba(46, 204, 113, 0.2)',
+              tension: 0.4,
+              fill: true,
+              yAxisID: 'y1'
+            },
+            {
+              label: 'Job Satisfaction',
+              data: [70, 65, 75, 85, 90, 88],
+              borderColor: '#e74c3c',
+              backgroundColor: 'rgba(231, 76, 60, 0.2)',
+              tension: 0.4,
+              fill: true,
+              yAxisID: 'y1'
+            }
+          ]
+        };
+  
+        // Check if we're on a small screen and adjust options
+        const isMobile = window.innerWidth < 768;
+  
+        // Create the chart
+        const ctx = document.getElementById('careerRoadmapChart').getContext('2d');
+        const careerChart = new Chart(ctx, {
+          type: 'line',
+          data: careerData,
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+              mode: 'index',
+              intersect: false,
+            },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    let label = context.dataset.label || '';
+                    if (label) {
+                      label += ': ';
+                      if (context.datasetIndex === 0) {
+                        label += '$' + context.raw.toLocaleString();
+                      } else {
+                        label += context.raw + '%';
+                      }
                     }
+                    return label;
                   }
-                  return label;
                 }
+              },
+              legend: {
+                display: false
               }
             },
-            legend: {
-              display: false
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: true,
-              position: 'left',
-              title: {
-                display: true,
-                text: 'Salary ($)'
-              },
-              ticks: {
-                callback: function(value) {
-                  return '$' + value.toLocaleString();
+            scales: {
+              x: {
+                grid: {
+                  display: !isMobile
+                },
+                ticks: {
+                  font: {
+                    size: isMobile ? 10 : 12
+                  }
                 }
-              }
-            },
-            y1: {
-              beginAtZero: true,
-              position: 'right',
-              title: {
-                display: true,
-                text: 'Percentage (%)'
               },
-              min: 0,
-              max: 100,
-              grid: {
-                drawOnChartArea: false
+              y: {
+                beginAtZero: true,
+                position: 'left',
+                title: {
+                  display: !isMobile,
+                  text: 'Salary ($)'
+                },
+                ticks: {
+                  callback: function(value) {
+                    if (isMobile) {
+                      // Abbreviated format for mobile
+                      return value >= 1000 ? '$' + (value/1000) + 'k' : '$' + value;
+                    }
+                    return '$' + value.toLocaleString();
+                  },
+                  font: {
+                    size: isMobile ? 10 : 12
+                  }
+                }
               },
-              ticks: {
-                callback: function(value) {
-                  return value + '%';
+              y1: {
+                beginAtZero: true,
+                position: 'right',
+                title: {
+                  display: !isMobile,
+                  text: 'Percentage (%)'
+                },
+                min: 0,
+                max: 100,
+                grid: {
+                  drawOnChartArea: false
+                },
+                ticks: {
+                  callback: function(value) {
+                    return value + '%';
+                  },
+                  font: {
+                    size: isMobile ? 10 : 12
+                  }
                 }
               }
             }
           }
-        }
-      });
-
-      // Create custom legend
-      const legendContainer = document.getElementById('chartLegend');
-      careerData.datasets.forEach((dataset, index) => {
-        const legendItem = document.createElement('div');
-        legendItem.classList.add('legend-item');
-        
-        const colorBox = document.createElement('div');
-        colorBox.classList.add('color-box');
-        colorBox.style.backgroundColor = dataset.borderColor;
-        
-        const text = document.createElement('span');
-        text.textContent = dataset.label;
-        
-        legendItem.appendChild(colorBox);
-        legendItem.appendChild(text);
-        legendContainer.appendChild(legendItem);
-        
-        legendItem.addEventListener('click', () => {
-          const datasetIndex = index;
-          const isDatasetVisible = careerChart.isDatasetVisible(datasetIndex);
+        });
+  
+        // Create custom legend
+        const legendContainer = document.getElementById('chartLegend');
+        careerData.datasets.forEach((dataset, index) => {
+          const legendItem = document.createElement('div');
+          legendItem.classList.add('legend-item');
           
-          if (isDatasetVisible) {
-            careerChart.hide(datasetIndex);
-            legendItem.style.opacity = 0.5;
-          } else {
-            careerChart.show(datasetIndex);
-            legendItem.style.opacity = 1;
+          const colorBox = document.createElement('div');
+          colorBox.classList.add('color-box');
+          colorBox.style.backgroundColor = dataset.borderColor;
+          
+          const text = document.createElement('span');
+          text.textContent = dataset.label;
+          
+          legendItem.appendChild(colorBox);
+          legendItem.appendChild(text);
+          legendContainer.appendChild(legendItem);
+          
+          // Make legend items interactive but with better touch targets
+          legendItem.addEventListener('click', () => {
+            const datasetIndex = index;
+            const isDatasetVisible = careerChart.isDatasetVisible(datasetIndex);
+            
+            if (isDatasetVisible) {
+              careerChart.hide(datasetIndex);
+              legendItem.style.opacity = 0.5;
+            } else {
+              careerChart.show(datasetIndex);
+              legendItem.style.opacity = 1;
+            }
+          });
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+          const newIsMobile = window.innerWidth < 768;
+          if (newIsMobile !== isMobile) {
+            // Reload the page to update chart options on major layout change
+            location.reload();
           }
         });
       });
-    });
-  </script>
+    </script>
 </body>
 </html>

@@ -435,6 +435,7 @@ section {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .roadmap {
@@ -644,6 +645,171 @@ footer {
     font-size: 0.9rem;
 }
 
+/* ====================== */
+
+#career-guidance {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+  
+  .section-header h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    margin: 0.5rem auto;
+    border-radius: 2px;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+  }
+  
+  .roadmap-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .roadmap {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .color-box {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  
+  /* Medium devices (tablets) */
+  @media (min-width: 768px) {
+    #career-guidance {
+      padding: 2.5rem 1.5rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.25rem;
+    }
+    
+    .section-header p {
+      font-size: 1.1rem;
+    }
+    
+    .roadmap {
+      height: 400px;
+    }
+    
+    .roadmap-container {
+      padding: 1.5rem;
+    }
+    
+    .legend-item {
+      font-size: 1rem;
+      margin: 0.5rem;
+    }
+    
+    .color-box {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  /* Large devices (desktops) */
+  @media (min-width: 992px) {
+    #career-guidance {
+      padding: 3rem 2rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+    }
+    
+    .section-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+    
+    .roadmap {
+      height: 450px;
+    }
+    
+    .roadmap-container {
+      padding: 2rem;
+    }
+  }
+  
+  /* Touch devices optimization */
+  @media (hover: none) {
+    .legend-item {
+      padding: 0.5rem 0.75rem;
+    }
+  }
+  
+  /* Prevent text from getting too small on very small devices */
+  @media (max-width: 359px) {
+    .section-header h2 {
+      font-size: 1.75rem;
+    }
+    
+    .legend {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .legend-item {
+      margin: 0.15rem 0;
+    }
+  }
+
+
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .hero-content h1 {
@@ -694,86 +860,4 @@ footer {
 }
 
 
-#career-guidance {
-    padding: 3rem 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  .section-header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .section-header h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  
-  .section-header h2:after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #3498db, #2ecc71);
-    margin: 0.5rem auto;
-    border-radius: 2px;
-  }
-  
-  .section-header p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  .roadmap-container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .roadmap {
-    position: relative;
-    height: 500px;
-  }
-  
-  @media (max-width: 768px) {
-    .section-header h2 {
-      font-size: 2rem;
-    }
-    
-    .section-header p {
-      font-size: 1rem;
-    }
-    
-    .roadmap {
-      height: 400px;
-    }
-  }
-  
-  .legend {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-  }
-  
-  .legend-item {
-    display: flex;
-    align-items: center;
-    margin: 0.5rem 1rem;
-  }
-  
-  .color-box {
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
-    border-radius: 3px;
-  }
+
