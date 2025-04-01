@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Progress Tracker</h1>
+        <div class="toggle-container">
+            <span>Theme</span>
+            <label class="theme-toggle">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="main-content">
+                <div class="card">
+                    <h2 class="card-title">Your Skills Progress</h2>
+                    <div class="skills-container">
+                        <div class="skill">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level">Advanced (75%)</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar advanced"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML/CSS</span>
+                                <span class="skill-level">Expert (90%)</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar expert"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-header">
+                                <span class="skill-name">React</span>
+                                <span class="skill-level">Intermediate (50%)</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar intermediate"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-header">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-level">Beginner (25%)</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar beginner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Progress Overview</h2>
+                    <div class="charts">
+                        <div class="chart">
+                            <div class="radial-chart">
+                                <div class="radial-bg"></div>
+                                <div class="radial-progress coding"></div>
+                                <div class="radial-inner">65%</div>
+                            </div>
+                            <div class="chart-label">Coding Skills</div>
+                        </div>
+                        <div class="chart">
+                            <div class="radial-chart">
+                                <div class="radial-bg"></div>
+                                <div class="radial-progress design"></div>
+                                <div class="radial-inner design">45%</div>
+                            </div>
+                            <div class="chart-label">Design Skills</div>
+                        </div>
+                    </div>
+
+                    <div class="line-graph">
+                        <div class="graph-point"></div>
+                        <div class="graph-point"></div>
+                        <div class="graph-point"></div>
+                        <div class="graph-point"></div>
+                        <div class="graph-point"></div>
+                        <div class="graph-line"></div>
+                        <div class="graph-labels">
+                            <span>Jan</span>
+                            <span>Feb</span>
+                            <span>Mar</span>
+                            <span>Apr</span>
+                            <span>May</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Recommended Learning Path</h2>
+                    <div class="learning-path">
+                        <div class="path-item">
+                            <div class="path-icon">1</div>
+                            <div class="path-content">
+                                <div class="path-title">Advanced JavaScript Concepts</div>
+                                <div class="path-description">Recommended based on your latest assessment results</div>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-icon">2</div>
+                            <div class="path-content">
+                                <div class="path-title">React State Management</div>
+                                <div class="path-description">Improve your React skills with advanced state patterns</div>
+                            </div>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-icon">3</div>
+                            <div class="path-content">
+                                <div class="path-title">Node.js Fundamentals</div>
+                                <div class="path-description">Build on your beginner knowledge with practical exercises</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="card assessment-card">
+                    <h2 class="card-title">Ready for Assessment?</h2>
+                    <p>Test your skills to update your progress metrics</p>
+                    <button class="btn btn-primary" style="margin-top: 1rem;">Take Assessment</button>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Your Achievements</h2>
+                    <div class="badge-container">
+                        <div class="badge earned">
+                            <div class="badge-icon">🏆</div>
+                            <div class="badge-label">HTML Master</div>
+                        </div>
+                        <div class="badge earned">
+                            <div class="badge-icon">⭐</div>
+                            <div class="badge-label">CSS Pro</div>
+                        </div>
+                        <div class="badge earned">
+                            <div class="badge-icon">🚀</div>
+                            <div class="badge-label">JS Rookie</div>
+                        </div>
+                        <div class="badge locked">
+                            <div class="badge-icon">🔒</div>
+                            <div class="badge-label">React Guru</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title">Weekly Goals</h2>
+                    <div class="skill">
+                        <div class="skill-header">
+                            <span class="skill-name">Study Hours</span>
+                            <span class="skill-level">8/10 hrs</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 80%; background: linear-gradient(to right, #4cc9f0, #4361ee);"></div>
+                        </div>
+                    </div>
+                    <div class="skill" style="margin-top: 1rem;">
+                        <div class="skill-header">
+                            <span class="skill-name">Projects</span>
+                            <span class="skill-level">2/3</span>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 66%; background: linear-gradient(to right, #4cc9f0, #4361ee);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Progress Tracking System &copy; 2025</p>
+    </footer>
+
+    <script>
+        // Dark mode toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            // In a real application, we would save this preference to localStorage here
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --success: #2ec4b6;
+            --danger: #e63946;
+            --warning: #ff9f1c;
+            --info: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --bg-light: #ffffff;
+            --bg-dark: #121212;
+            --text-light: #212529;
+            --text-dark: #e9ecef;
+            --border-light: #dee2e6;
+            --border-dark: #495057;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        body.dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin-left: 10px;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--light);
+            border-radius: 34px;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: var(--dark);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+            background-color: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .dashboard {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dark-mode .card {
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .dark-mode .card-title {
+            color: var(--info);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .skill {
+            margin-bottom: 1rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-level {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .dark-mode .skill-level {
+            color: var(--info);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dark-mode .progress-container {
+            background-color: #333;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar.beginner {
+            background: linear-gradient(to right, #ff9f1c, #f48c06);
+            width: 25%;
+        }
+
+        .progress-bar.intermediate {
+            background: linear-gradient(to right, #4cc9f0, #4361ee);
+            width: 50%;
+        }
+
+        .progress-bar.advanced {
+            background: linear-gradient(to right, #4361ee, #3a0ca3);
+            width: 75%;
+        }
+
+        .progress-bar.expert {
+            background: linear-gradient(to right, #3a0ca3, #7209b7);
+            width: 90%;
+        }
+
+        .charts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .charts {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .chart {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .radial-chart {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 1rem auto;
+        }
+
+        .radial-bg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(#e9ecef 0% 100%);
+        }
+
+        .dark-mode .radial-bg {
+            background: conic-gradient(#333 0% 100%);
+        }
+
+        .radial-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            clip-path: circle(50% at 50% 50%);
+        }
+
+        .radial-progress.coding {
+            background: conic-gradient(var(--primary) 0% 65%, transparent 65% 100%);
+        }
+
+        .radial-progress.design {
+            background: conic-gradient(var(--success) 0% 45%, transparent 45% 100%);
+        }
+
+        .radial-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background-color: var(--bg-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .dark-mode .radial-inner {
+            background-color: var(--bg-dark);
+            color: var(--info);
+        }
+
+        .radial-inner.design {
+            color: var(--success);
+        }
+
+        .dark-mode .radial-inner.design {
+            color: var(--success);
+        }
+
+        .chart-label {
+            margin-top: 1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .badge {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .badge {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge.earned {
+            background: linear-gradient(135deg, var(--success), var(--primary));
+        }
+
+        .badge.locked {
+            background: #e9ecef;
+            color: #adb5bd;
+        }
+
+        .dark-mode .badge.locked {
+            background: #333;
+            color: #6c757d;
+        }
+
+        .badge-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .badge-label {
+            font-size: 0.7rem;
+            text-align: center;
+        }
+
+        .assessment-card {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+        }
+
+        .dark-mode .btn-primary:hover {
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.5);
+        }
+
+        .learning-path {
+            margin-top: 1rem;
+        }
+
+        .path-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .dark-mode .path-item {
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .path-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .path-content {
+            flex: 1;
+        }
+
+        .path-title {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .path-description {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .dark-mode .path-description {
+            color: #adb5bd;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding: 2rem;
+            text-align: center;
+            background-color: var(--bg-light);
+            border-top: 1px solid var(--border-light);
+            color: #6c757d;
+        }
+
+        .dark-mode footer {
+            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-dark);
+        }
+
+        /* Line Graph */
+        .line-graph {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-light);
+            border-left: 1px solid var(--border-light);
+            margin-top: 20px;
+        }
+
+        .dark-mode .line-graph {
+            border-bottom: 1px solid var(--border-dark);
+            border-left: 1px solid var(--border-dark);
+        }
+
+        .graph-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            bottom: 0;
+            transform: translate(-50%, 50%);
+        }
+
+        .graph-point:nth-child(1) {
+            left: 10%;
+            bottom: 20%;
+        }
+
+        .graph-point:nth-child(2) {
+            left: 30%;
+            bottom: 35%;
+        }
+
+        .graph-point:nth-child(3) {
+            left: 50%;
+            bottom: 50%;
+        }
+
+        .graph-point:nth-child(4) {
+            left: 70%;
+            bottom: 65%;
+        }
+
+        .graph-point:nth-child(5) {
+            left: 90%;
+            bottom: 75%;
+        }
+
+        .graph-line {
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--info));
+            bottom: 0;
+            left: 10%;
+            transform: translateY(50%);
+            clip-path: polygon(
+                0% 0%, 
+                25% 0%, 
+                25% 23%, 
+                50% 35%, 
+                75% 52%, 
+                100% 65%, 
+                100% 100%, 
+                0% 100%
+            );
+        }
+
+        .graph-labels {
+            position: absolute;
+            width: 100%;
+            bottom: -25px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10%;
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .dark-mode .graph-labels {
+            color: #adb5bd;
+        }

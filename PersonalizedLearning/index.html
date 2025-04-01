@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Learning Paths</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Personalized Learning Paths</h1>
+            <p>Discover your ideal learning journey based on your skills, interests, and goals</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="profile-section" class="active-section">
+            <h2>Your Learning Profile</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Current Skills</label>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-html" value="HTML">
+                            <label for="skill-html">HTML</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-css" value="CSS">
+                            <label for="skill-css">CSS</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-js" value="JavaScript">
+                            <label for="skill-js">JavaScript</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-python" value="Python">
+                            <label for="skill-python">Python</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-java" value="Java">
+                            <label for="skill-java">Java</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-design" value="UI/UX Design">
+                            <label for="skill-design">UI/UX Design</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-data" value="Data Analysis">
+                            <label for="skill-data">Data Analysis</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="skill-cloud" value="Cloud Computing">
+                            <label for="skill-cloud">Cloud Computing</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Interests</label>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-web" value="Web Development">
+                            <label for="interest-web">Web Development</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-mobile" value="Mobile Development">
+                            <label for="interest-mobile">Mobile Development</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-ai" value="AI/Machine Learning">
+                            <label for="interest-ai">AI/Machine Learning</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-game" value="Game Development">
+                            <label for="interest-game">Game Development</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-security" value="Cybersecurity">
+                            <label for="interest-security">Cybersecurity</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-data" value="Data Science">
+                            <label for="interest-data">Data Science</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-design" value="UI/UX Design">
+                            <label for="interest-design">UI/UX Design</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="interest-cloud" value="Cloud Architecture">
+                            <label for="interest-cloud">Cloud Architecture</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="career-goal">Career Goal</label>
+                    <select id="career-goal" required>
+                        <option value="" disabled selected>Select your goal</option>
+                        <option value="Frontend Developer">Frontend Developer</option>
+                        <option value="Backend Developer">Backend Developer</option>
+                        <option value="Full Stack Developer">Full Stack Developer</option>
+                        <option value="Mobile App Developer">Mobile App Developer</option>
+                        <option value="Data Scientist">Data Scientist</option>
+                        <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                        <option value="UI/UX Designer">UI/UX Designer</option>
+                        <option value="DevOps Engineer">DevOps Engineer</option>
+                        <option value="Cybersecurity Specialist">Cybersecurity Specialist</option>
+                        <option value="Game Developer">Game Developer</option>
+                        <option value="Cloud Architect">Cloud Architect</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="time-commitment">Time Commitment</label>
+                    <select id="time-commitment" required>
+                        <option value="" disabled selected>Select available time</option>
+                        <option value="Minimal (0-5 hrs/week)">Minimal (0-5 hrs/week)</option>
+                        <option value="Part-time (5-10 hrs/week)">Part-time (5-10 hrs/week)</option>
+                        <option value="Dedicated (10-20 hrs/week)">Dedicated (10-20 hrs/week)</option>
+                        <option value="Full-time (20+ hrs/week)">Full-time (20+ hrs/week)</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn primary-btn" id="generate-path">Generate My Learning Path</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="results-section" class="hidden-section">
+            <div class="results-header">
+                <h2>Your Personalized Learning Path</h2>
+                <div class="user-profile-summary">
+                    <p id="user-profile-name"></p>
+                    <p id="user-profile-goal"></p>
+                </div>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="difficulty-filter">Difficulty:</label>
+                        <select id="difficulty-filter">
+                            <option value="all">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="duration-filter">Duration:</label>
+                        <select id="duration-filter">
+                            <option value="all">All Durations</option>
+                            <option value="short">Short (< 10 hours)</option>
+                            <option value="medium">Medium (10-30 hours)</option>
+                            <option value="long">Long (30+ hours)</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="cost-filter">Cost:</label>
+                        <select id="cost-filter">
+                            <option value="all">All</option>
+                            <option value="free">Free</option>
+                            <option value="paid">Paid</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="cards">
+                    <i class="fas fa-th"></i> Card View
+                </button>
+                <button class="view-btn" data-view="roadmap">
+                    <i class="fas fa-road"></i> Roadmap View
+                </button>
+            </div>
+
+            <div id="courses-container" class="card-view active-view">
+                <!-- Course cards will be inserted here -->
+            </div>
+
+            <div id="roadmap-container" class="roadmap-view">
+                <!-- Roadmap view will be inserted here -->
+            </div>
+
+            <div class="button-group">
+                <button class="btn secondary-btn" id="back-to-profile">Edit Profile</button>
+                <button class="btn primary-btn" id="save-path">Save My Learning Path</button>
+            </div>
+        </section>
+
+        <div id="success-notification" class="notification">
+            <i class="fas fa-check-circle"></i>
+            <span>Your learning path has been saved successfully!</span>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Personalized Learning Paths. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Templates -->
+    <template id="course-card-template">
+        <div class="course-card">
+            <div class="course-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="course-badge"></div>
+            <h3 class="course-title"></h3>
+            <p class="course-description"></p>
+            <div class="course-details">
+                <span class="course-difficulty"><i class="fas fa-signal"></i> <span class="difficulty-text"></span></span>
+                <span class="course-duration"><i class="fas fa-clock"></i> <span class="duration-text"></span></span>
+            </div>
+            <div class="course-price">
+                <span class="price-text"></span>
+            </div>
+            <a href="#" class="course-link">Learn More</a>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

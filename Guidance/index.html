@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Career Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="theme-switch">
+            <label for="theme-switch" class="switch-label">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span class="switch-ball"></span>
+            </label>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="/api/placeholder/60/60" alt="Logo">
+                <h2>CareerPath</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#roadmaps"><i class="fas fa-road"></i> Career Roadmaps</a></li>
+                <li><a href="#skills"><i class="fas fa-chart-bar"></i> Skills Analysis</a></li>
+                <li><a href="#courses"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Welcome Header -->
+            <header class="welcome-header">
+                <div class="welcome-text">
+                    <h1>Welcome back, <span class="user-name">Alex</span></h1>
+                    <p>Your career journey is <span class="progress-status">on track</span>. Here's your progress.</p>
+                </div>
+                <div class="notification-area">
+                    <button class="notification-btn"><i class="fas fa-bell"></i></button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard-section">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card progress-card">
+                        <h3>Your Progress</h3>
+                        <div class="progress-chart">
+                            <div class="progress-circle">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="circle" stroke-dasharray="65, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <text x="18" y="20.5" class="percentage">65%</text>
+                                </svg>
+                            </div>
+                            <div class="progress-details">
+                                <p><strong>Completed:</strong> 12 milestones</p>
+                                <p><strong>Next goal:</strong> Advanced JavaScript</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card recommended-card">
+                        <h3>Recommended For You</h3>
+                        <ul class="recommendation-list">
+                            <li>
+                                <i class="fas fa-laptop-code"></i>
+                                <div>
+                                    <h4>React JS Fundamentals</h4>
+                                    <p>Enhance your front-end skills</p>
+                                </div>
+                                <button class="view-btn">View</button>
+                            </li>
+                            <li>
+                                <i class="fas fa-database"></i>
+                                <div>
+                                    <h4>SQL Basics</h4>
+                                    <p>Important for data handling</p>
+                                </div>
+                                <button class="view-btn">View</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dashboard-card insight-card">
+                        <h3>Career Insights</h3>
+                        <div class="market-insights">
+                            <div class="insight-item">
+                                <h4>Software Developer</h4>
+                                <div class="insight-details">
+                                    <p><i class="fas fa-chart-line"></i> <span class="trend up">↑ 12% Growth</span></p>
+                                    <p><i class="fas fa-dollar-sign"></i> $85,000 - $120,000</p>
+                                </div>
+                            </div>
+                            <div class="insight-item">
+                                <h4>Data Scientist</h4>
+                                <div class="insight-details">
+                                    <p><i class="fas fa-chart-line"></i> <span class="trend up">↑ 15% Growth</span></p>
+                                    <p><i class="fas fa-dollar-sign"></i> $90,000 - $140,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card skills-card">
+                        <h3>Skills Overview</h3>
+                        <div class="skills-chart">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>HTML & CSS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>JavaScript</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>React</span>
+                                    <span>50%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Node.js</span>
+                                    <span>40%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 40%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="full-analysis-btn">View Full Analysis</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Career Roadmaps Section -->
+            <section id="roadmaps" class="roadmaps-section">
+                <div class="section-header">
+                    <h2>Career Roadmaps</h2>
+                    <div class="filter-dropdown">
+                        <select id="industry-filter">
+                            <option value="all">All Industries</option>
+                            <option value="tech">Technology</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="roadmaps-grid">
+                    <!-- Software Developer Roadmap -->
+                    <div class="roadmap-card" data-industry="tech">
+                        <div class="roadmap-header">
+                            <div class="roadmap-title">
+                                <i class="fas fa-laptop-code"></i>
+                                <h3>Software Developer</h3>
+                            </div>
+                            <span class="match-badge">93% Match</span>
+                        </div>
+                        <div class="roadmap-content">
+                            <p>A structured path to becoming a professional software developer</p>
+                            <div class="milestone-preview">
+                                <div class="milestone completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Learn HTML & CSS</span>
+                                </div>
+                                <div class="milestone completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Master JavaScript</span>
+                                </div>
+                                <div class="milestone active">
+                                    <i class="fas fa-circle"></i>
+                                    <span>Build Portfolio Projects</span>
+                                </div>
+                            </div>
+                            <button class="view-roadmap-btn">View Full Roadmap</button>
+                        </div>
+                    </div>
+
+                    <!-- Data Scientist Roadmap -->
+                    <div class="roadmap-card" data-industry="tech">
+                        <div class="roadmap-header">
+                            <div class="roadmap-title">
+                                <i class="fas fa-chart-network"></i>
+                                <h3>Data Scientist</h3>
+                            </div>
+                            <span class="match-badge">76% Match</span>
+                        </div>
+                        <div class="roadmap-content">
+                            <p>Master data science from statistics to machine learning</p>
+                            <div class="milestone-preview">
+                                <div class="milestone completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Learn Python</span>
+                                </div>
+                                <div class="milestone active">
+                                    <i class="fas fa-circle"></i>
+                                    <span>Statistics & Mathematics</span>
+                                </div>
+                                <div class="milestone">
+                                    <i class="far fa-circle"></i>
+                                    <span>Data Analysis with Pandas</span>
+                                </div>
+                            </div>
+                            <button class="view-roadmap-btn">View Full Roadmap</button>
+                        </div>
+                    </div>
+
+                    <!-- Digital Marketing Roadmap -->
+                    <div class="roadmap-card" data-industry="marketing">
+                        <div class="roadmap-header">
+                            <div class="roadmap-title">
+                                <i class="fas fa-bullhorn"></i>
+                                <h3>Digital Marketer</h3>
+                            </div>
+                            <span class="match-badge">65% Match</span>
+                        </div>
+                        <div class="roadmap-content">
+                            <p>Learn to create and implement effective digital marketing strategies</p>
+                            <div class="milestone-preview">
+                                <div class="milestone completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Digital Marketing Fundamentals</span>
+                                </div>
+                                <div class="milestone">
+                                    <i class="far fa-circle"></i>
+                                    <span>SEO & Content Marketing</span>
+                                </div>
+                                <div class="milestone">
+                                    <i class="far fa-circle"></i>
+                                    <span>Social Media Strategy</span>
+                                </div>
+                            </div>
+                            <button class="view-roadmap-btn">View Full Roadmap</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Roadmap Modal -->
+            <div class="roadmap-modal" id="roadmap-modal">
+                <div class="roadmap-modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Software Developer Roadmap</h2>
+                    
+                    <div class="timeline-roadmap">
+                        <!-- Beginner Level -->
+                        <div class="timeline-phase">
+                            <h3 class="phase-title">Beginner Level</h3>
+                            <div class="timeline-items">
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Learn HTML & CSS</h4>
+                                        <p>Master the fundamentals of web development</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: 4 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="html-css" checked>
+                                                <label for="html-css">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>JavaScript Basics</h4>
+                                        <p>Learn programming fundamentals with JavaScript</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: 6 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="js-basics" checked>
+                                                <label for="js-basics">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item active">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Build Basic Projects</h4>
+                                        <p>Create simple websites and applications</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: 4 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="basic-projects">
+                                                <label for="basic-projects">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Intermediate Level -->
+                        <div class="timeline-phase">
+                            <h3 class="phase-title">Intermediate Level</h3>
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Advanced JavaScript</h4>
+                                        <p>Learn advanced concepts like async/await, closures, etc.</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: a8 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="advanced-js">
+                                                <label for="advanced-js">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Front-end Framework</h4>
+                                        <p>Learn React, Vue, or Angular</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: 8 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="frontend-framework">
+                                                <label for="frontend-framework">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Back-end Basics</h4>
+                                        <p>Learn Node.js and a database system</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: 10 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="backend-basics">
+                                                <label for="backend-basics">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Advanced Level -->
+                        <div class="timeline-phase">
+                            <h3 class="phase-title">Advanced Level</h3>
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Full-Stack Projects</h4>
+                                        <p>Build complete applications with front-end and back-end</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: 12 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="full-stack">
+                                                <label for="full-stack">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>DevOps & Deployment</h4>
+                                        <p>Learn about CI/CD, Docker, and cloud platforms</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: 6 weeks</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="devops">
+                                                <label for="devops">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Industry Internship/Job</h4>
+                                        <p>Apply for positions or contribute to open-source</p>
+                                        <div class="item-details">
+                                            <span class="tag">Est. Time: Ongoing</span>
+                                            <button class="resources-btn">Resources</button>
+                                            <div class="checkbox-container">
+                                                <input type="checkbox" id="job">
+                                                <label for="job">Complete</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Recommendations Section -->
+            <section id="courses" class="courses-section">
+                <div class="section-header">
+                    <h2>Recommended Courses</h2>
+                    <div class="courses-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="recommended">Recommended</button>
+                        <button class="filter-btn" data-filter="popular">Popular</button>
+                        <button class="filter-btn" data-filter="new">New</button>
+                    </div>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- Course 1 -->
+                    <div class="course-card" data-category="recommended popular">
+                        <div class="course-image">
+                            <img src="/api/placeholder/320/180" alt="JavaScript Mastery">
+                            <span class="course-tag">Recommended</span>
+                        </div>
+                        <div class="course-content">
+                            <h3>Advanced JavaScript Concepts</h3>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 24 hours</span>
+                                <span><i class="fas fa-user-graduate"></i> 12K students</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                            <p>Master advanced JavaScript concepts including closures, prototypes, and async patterns.</p>
+                            <div class="course-footer">
+                                <span class="course-price">$49.99</span>
+                                <button class="enroll-btn">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="course-card" data-category="recommended new">
+                        <div class="course-image">
+                            <img src="/api/placeholder/320/180" alt="React Course">
+                            <span class="course-tag">New</span>
+                        </div>
+                        <div class="course-content">
+                            <h3>React.js: Zero to Expert</h3>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 36 hours</span>
+                                <span><i class="fas fa-user-graduate"></i> 8K students</span>
+                                <span><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                            <p>Comprehensive React.js course covering hooks, context API, and Redux integration.</p>
+                            <div class="course-footer">
+                                <span class="course-price">$59.99</span>
+                                <button class="enroll-btn">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="course-card" data-category="popular">
+                        <div class="course-image">
+                            <img src="/api/placeholder/320/180" alt="Node.js Course">
+                            <span class="course-tag">Popular</span>
+                        </div>
+                        <div class="course-content">
+                            <h3>Node.js & Express: Complete Guide</h3>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 28 hours</span>
+                                <span><i class="fas fa-user-graduate"></i> 15K students</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                            <p>Learn server-side JavaScript with Node.js and build RESTful APIs with Express.</p>
+                            <div class="course-footer">
+                                <span class="course-price">$54.99</span>
+                                <button class="enroll-btn">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div class="course-card" data-category="new">
+                        <div class="course-image">
+                            <img src="/api/placeholder/320/180" alt="TypeScript Course">
+                            <span class="course-tag">New</span>
+                        </div>
+                        <div class="course-content">
+                            <h3>TypeScript for JavaScript Developers</h3>
+                            <div class="course-details">
+                                <span><i class="fas fa-clock"></i> 18 hours</span>
+                                <span><i class="fas fa-user-graduate"></i> 5K students</span>
+                                <span><i class="fas fa-star"></i> 4.6</span>
+                            </div>
+                            <p>Learn how to supercharge your JavaScript applications with TypeScript's static typing.</p>
+                            <div class="course-footer">
+                                <span class="course-price">$44.99</span>
+                                <button class="enroll-btn">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

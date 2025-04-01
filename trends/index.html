@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Trends & Insights</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body class="light-mode">
+    <div class="container">
+        <header>
+            <h1>Industry Trends & Insights</h1>
+            <div class="header-controls">
+                <div class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-switch">
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="filters">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search skills...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-container">
+                <label for="industry-filter">Filter by Industry:</label>
+                <select id="industry-filter">
+                    <option value="all">All Industries</option>
+                    <option value="tech">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="education">Education</option>
+                </select>
+            </div>
+        </div>
+
+        <main class="dashboard">
+            <section class="card job-trends">
+                <h2>Job Market Trends</h2>
+                <div class="chart-container">
+                    <canvas id="job-trends-chart"></canvas>
+                </div>
+                <div class="trend-summary">
+                    <p>Overall market growth: <span class="highlight positive">+5.7%</span></p>
+                    <p>Top growing sector: <span class="highlight">Technology</span></p>
+                </div>
+            </section>
+
+            <section class="card skills-demand">
+                <h2>In-Demand Skills</h2>
+                <div class="chart-container">
+                    <canvas id="skills-chart"></canvas>
+                </div>
+                <div class="top-skills" id="top-skills-list">
+                    <!-- Skills will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <section class="card industry-breakdown">
+                <h2>Industry Breakdown</h2>
+                <div class="chart-container">
+                    <canvas id="industry-chart"></canvas>
+                </div>
+            </section>
+
+            <section class="card popular-courses">
+                <h2>Recommended Courses</h2>
+                <div class="courses-container" id="recommended-courses">
+                    <!-- Courses will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <section class="job-listings card">
+            <h2>Recent Job Opportunities</h2>
+            <div class="job-list" id="job-listings">
+                <!-- Job listings will be populated by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Industry Insights Dashboard. Updated in real-time.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
